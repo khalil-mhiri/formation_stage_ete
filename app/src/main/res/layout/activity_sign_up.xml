@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="30sp"
+                android:fontFamily="@font/font_app"
+                android:text="@string/welcome_sign_up"
+                android:textColor="@color/colorApp"
+                android:textSize="22sp" />
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="30sp"
+                android:src="@drawable/test_logo" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15sp"
+            android:background="@drawable/shape"
+            android:orientation="vertical"
+            android:padding="20sp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter your email address :"
+                android:textSize="15sp"
+                android:fontFamily="@font/font_app"
+                android:layout_marginTop="20sp"
+                android:textColor="@color/colorApp"/>
+
+            <EditText
+                android:id="@+id/fullNameSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15sp"
+                android:drawableEnd="@drawable/ic_person_test"
+                android:drawableTint="@color/colorApp"
+                android:fontFamily="@font/font_app"
+                android:hint="Full name"
+                android:inputType="text"
+                android:padding="10sp"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/emailSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15sp"
+                android:drawableEnd="@drawable/ic_email"
+                android:drawableTint="@color/colorApp"
+                android:fontFamily="@font/font_app"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:padding="10sp"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/cinSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15sp"
+                android:drawableEnd="@drawable/ic_cin"
+                android:drawableTint="@color/colorApp"
+                android:fontFamily="@font/font_app"
+                android:hint="CIN"
+                android:inputType="number"
+                android:padding="10sp"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/phoneNumberSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15sp"
+                android:drawableEnd="@drawable/ic_phone"
+                android:drawableTint="@color/colorApp"
+                android:fontFamily="@font/font_app"
+                android:hint="Phone Number"
+                android:inputType="number"
+                android:padding="10sp"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/passwordSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15sp"
+                android:drawableEnd="@drawable/ic_password"
+                android:drawableTint="@color/colorApp"
+                android:fontFamily="@font/font_app"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:padding="10sp"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/confirmPasswordSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15sp"
+                android:drawableEnd="@drawable/ic_password"
+                android:drawableTint="@color/colorApp"
+                android:fontFamily="@font/font_app"
+                android:hint="TO-DO Confirme Password"
+                android:inputType="textPassword"
+                android:padding="10sp"
+                android:textSize="15sp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Remember Me !"
+                android:textColor="@color/colorApp"
+                android:textSize="14sp"
+                android:fontFamily="@font/font_app"
+                />
+
+            <TextView
+                android:id="@+id/forget_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Forget password ?"
+                android:layout_gravity="end"
+                android:layout_margin="10sp"
+                android:textColor="@color/colorApp"
+                android:fontFamily="@font/font_app"/>
+
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSignUp"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/colorApp"
+            android:fontFamily="@font/font_app"
+            android:text="Sign up"
+            app:cornerRadius="20sp" />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/font_app"
+            android:textColor="@color/colorApp"
+            android:text="Back"
+            android:drawableLeft="@drawable/ic_back"
+            android:drawableTint="@color/colorApp"
+            android:layout_marginTop="15sp"
+            app:cornerRadius="20sp" />
+
+        <TextView
+            android:id="@+id/goToSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10sp"
+            android:fontFamily="@font/font_app"
+            android:text="@string/goToSignIn"
+            android:textColor="@color/colorApp"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+
+</ScrollView>

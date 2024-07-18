@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignInActivity"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter your email address :"
+        android:textSize="15sp"
+        android:fontFamily="@font/font_app"
+        android:layout_marginTop="20sp"
+        android:textColor="@color/colorApp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15sp"
+        android:drawableEnd="@drawable/ic_email"
+        android:drawableTint="@color/colorApp"
+        android:fontFamily="@font/font_app"
+        android:hint="enter your email"
+        android:inputType="textEmailAddress"
+        android:padding="10sp"
+        android:textSize="15sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter your password :"
+        android:textSize="15sp"
+        android:fontFamily="@font/font_app"
+        android:layout_marginTop="20sp"
+        android:textColor="@color/colorApp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15sp"
+        android:drawableEnd="@drawable/ic_password"
+        android:drawableTint="@color/colorApp"
+        android:fontFamily="@font/font_app"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="10sp"
+        android:textSize="15sp" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remember Me !"
+        android:textColor="@color/colorApp"
+        android:textSize="14sp"
+        android:fontFamily="@font/font_app"
+        android:layout_gravity="center"/>
+    <TextView
+        android:id="@+id/forget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forget password ?"
+        android:layout_gravity="center"
+        android:layout_margin="10sp"
+        android:textColor="@color/colorApp"
+        android:fontFamily="@font/font_app"/>
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/colorApp"
+        android:fontFamily="@font/font_app"
+        android:text="Sign in"
+        app:cornerRadius="20sp" />
+
+</LinearLayout>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "878634485000",
+    "project_id": "formationete-77e99",
+    "storage_bucket": "formationete-77e99.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:878634485000:android:ff18caa35ebdd3fcd8d8bd",
+        "android_client_info": {
+          "package_name": "com.example.formationgroupe8"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuApjVu4FKcLtFOGuo5YoqFvaQrBGuxGo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
