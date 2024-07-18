@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 public class SignUpActivity extends AppCompatActivity {
 
     //declaration de variables
-    private TextView goToSignIn;
+    private TextView goToSignIn,forget;
     private EditText fullName, email, cin, phone, password, confirmPassword;
     private Button btnSignUp;
     private String fullNameInput, emailInput, cinInput, phoneInput, passwordInput, confirmPasswordInput;
@@ -38,6 +38,11 @@ public class SignUpActivity extends AppCompatActivity {
         btnSignUp = findViewById(R.id.btnSignUp);
 
         //Actions
+        forget = findViewById(R.id.forget_1);
+
+        forget.setOnClickListener(v -> {
+            startActivity(new Intent(SignUpActivity.this, ForgetPasswordActivity.class));
+        });
         goToSignIn.setOnClickListener(v -> {
 
             startActivity(new Intent(SignUpActivity.this, SignInActivity.class));

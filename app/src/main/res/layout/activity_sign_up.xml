@@ -45,11 +45,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Enter your email address :"
-                android:textSize="15sp"
-                android:fontFamily="@font/font_app"
                 android:layout_marginTop="20sp"
-                android:textColor="@color/colorApp"/>
+                android:fontFamily="@font/font_app"
+                android:text="Enter your email address :"
+                android:textColor="@color/colorApp"
+                android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/fullNameSignUp"
@@ -132,22 +132,20 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/font_app"
                 android:text="Remember Me !"
                 android:textColor="@color/colorApp"
-                android:textSize="14sp"
-                android:fontFamily="@font/font_app"
-                />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/forget_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Forget password ?"
                 android:layout_gravity="end"
                 android:layout_margin="10sp"
-                android:textColor="@color/colorApp"
-                android:fontFamily="@font/font_app"/>
-
+                android:fontFamily="@font/font_app"
+                android:text="Forget password ?"
+                android:textColor="@color/colorApp" />
 
 
         </LinearLayout>
