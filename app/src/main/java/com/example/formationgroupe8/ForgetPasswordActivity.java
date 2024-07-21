@@ -17,7 +17,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
         backtosignup1 = findViewById(R.id.backtosignup);
 
         backtosignup1.setOnClickListener(v -> {
-            startActivity(new Intent(ForgetPasswordActivity.this,SignUpActivity.class));
+            startActivity(new Intent(ForgetPasswordActivity.this,SignInActivity.class));
         });
 
     }

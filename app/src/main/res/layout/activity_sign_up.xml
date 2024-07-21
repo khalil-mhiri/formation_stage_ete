@@ -128,28 +128,7 @@
                 android:inputType="textPassword"
                 android:padding="10sp"
                 android:textSize="15sp" />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/font_app"
-                android:text="Remember Me !"
-                android:textColor="@color/colorApp"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/forget_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_margin="10sp"
-                android:fontFamily="@font/font_app"
-                android:text="Forget password ?"
-                android:textColor="@color/colorApp" />
-
-
         </LinearLayout>
-
         <Button
             android:id="@+id/btnSignUp"
             android:layout_width="150dp"
@@ -160,18 +139,7 @@
             android:text="Sign up"
             app:cornerRadius="20sp" />
 
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:backgroundTint="@color/white"
-            android:fontFamily="@font/font_app"
-            android:textColor="@color/colorApp"
-            android:text="Back"
-            android:drawableLeft="@drawable/ic_back"
-            android:drawableTint="@color/colorApp"
-            android:layout_marginTop="15sp"
-            app:cornerRadius="20sp" />
+
 
         <TextView
             android:id="@+id/goToSignIn"

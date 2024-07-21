@@ -1,14 +1,22 @@
 package com.example.formationgroupe8;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.formationgroupe8.models.User;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -16,12 +24,13 @@ import java.util.regex.Pattern;
 public class SignUpActivity extends AppCompatActivity {
 
     //declaration de variables
-    private TextView goToSignIn,forget;
+    private TextView goToSignIn;
     private EditText fullName, email, cin, phone, password, confirmPassword;
     private Button btnSignUp;
     private String fullNameInput, emailInput, cinInput, phoneInput, passwordInput, confirmPasswordInput;
     private final String EMAIL_PATTERN = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-
+    private FirebaseAuth firebaseAuth;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,27 +45,62 @@ public class SignUpActivity extends AppCompatActivity {
         password = findViewById(R.id.passwordSignUp);
         confirmPassword = findViewById(R.id.confirmPasswordSignUp);
         btnSignUp = findViewById(R.id.btnSignUp);
+        firebaseAuth = FirebaseAuth.getInstance();
+        progressDialog = new ProgressDialog(this);
+
+
 
         //Actions
-        forget = findViewById(R.id.forget_1);
-
-        forget.setOnClickListener(v -> {
-            startActivity(new Intent(SignUpActivity.this, ForgetPasswordActivity.class));
-        });
         goToSignIn.setOnClickListener(v -> {
 
             startActivity(new Intent(SignUpActivity.this, SignInActivity.class));
         });
 
-        btnSignUp.setOnClickListener(v ->{
-
-            if (validate()){
-                Toast.makeText(this, "done", Toast.LENGTH_SHORT).show();
+        btnSignUp.setOnClickListener(v -> {
+            progressDialog.setMessage("Please wait ... !");
+            progressDialog.show();
+            if (validate()) {
+                firebaseAuth.createUserWithEmailAndPassword(emailInput, passwordInput).addOnCompleteListener(Task -> {
+                    if (Task.isSuccessful()) {
+                        sendEmailVerification();
+                    } else {
+                        Toast.makeText(this, "register failed !", Toast.LENGTH_SHORT).show();
+                        progressDialog.dismiss();
+                    }
+                });
             }
         });
 
     }
 
+    private void sendEmailVerification() {
+        FirebaseUser loggedUser = firebaseAuth.getCurrentUser();
+        if (loggedUser != null) {
+            loggedUser.sendEmailVerification().addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    sendUserData();
+                    Toast.makeText(this, "Registration done , please check your email .", Toast.LENGTH_SHORT).show();
+                    firebaseAuth.signOut();
+                    startActivity(new Intent(SignUpActivity.this, SignInActivity.class));
+                    progressDialog.dismiss();
+                    finish();
+                } else {
+                    Toast.makeText(this, "Registration failed !", Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
+                }
+            });
+        }
+
+    }
+
+    private void sendUserData() {
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference = firebaseDatabase.getReference("Users");
+        User user = new User(fullNameInput, emailInput, cinInput, phoneInput);
+        databaseReference.child(""+firebaseAuth.getUid()).setValue(user);
+
+
+    }
     private boolean validate(){
 
 
