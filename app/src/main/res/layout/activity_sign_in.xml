@@ -17,6 +17,7 @@
         android:layout_marginTop="20sp"
         android:textColor="@color/colorApp"/>
     <EditText
+        android:id="@+id/emailSignIn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15sp"
@@ -36,6 +37,7 @@
         android:layout_marginTop="20sp"
         android:textColor="@color/colorApp"/>
     <EditText
+        android:id="@+id/passwordSignIn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15sp"
@@ -47,6 +49,7 @@
         android:padding="10sp"
         android:textSize="15sp" />
     <CheckBox
+        android:id="@+id/rememberMeSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Remember Me !"
@@ -64,6 +67,7 @@
         android:textColor="@color/colorApp"
         android:fontFamily="@font/font_app"/>
     <Button
+        android:id="@+id/btnSignIn"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -71,5 +75,15 @@
         android:fontFamily="@font/font_app"
         android:text="Sign in"
         app:cornerRadius="20sp" />
+    <TextView
+        android:id="@+id/gotoSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="8sp"
+        android:fontFamily="@font/font_app"
+        android:text="New user Register here !"
+        android:textColor="@color/colorApp"
+        android:textSize="18sp" />
 
 </LinearLayout>

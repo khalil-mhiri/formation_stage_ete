@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfilActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15sp"
+        android:background="@drawable/shape"
+        android:orientation="vertical"
+        android:padding="20sp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:fontFamily="@font/font_app"
+            android:text="Enter your email address :"
+            android:textColor="@color/colorApp"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/fullNameProfil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15sp"
+            android:drawableEnd="@drawable/ic_person_test"
+            android:drawableTint="@color/colorApp"
+            android:fontFamily="@font/font_app"
+            android:hint="Full name"
+            android:inputType="text"
+            android:padding="10sp"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/emailProfil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15sp"
+            android:drawableEnd="@drawable/ic_email"
+            android:drawableTint="@color/colorApp"
+            android:fontFamily="@font/font_app"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:padding="10sp"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/cinProfil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15sp"
+            android:drawableEnd="@drawable/ic_cin"
+            android:drawableTint="@color/colorApp"
+            android:fontFamily="@font/font_app"
+            android:hint="CIN"
+            android:inputType="number"
+            android:padding="10sp"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/phoneNumberProfil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15sp"
+            android:drawableEnd="@drawable/ic_phone"
+            android:drawableTint="@color/colorApp"
+            android:fontFamily="@font/font_app"
+            android:hint="Phone Number"
+            android:inputType="number"
+            android:padding="10sp"
+            android:textSize="15sp" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/btnEditProfil"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/colorApp"
+        android:fontFamily="@font/font_app"
+        android:text="EDIT"
+        app:cornerRadius="20sp" />
+    <Button
+        android:id="@+id/btnLogOut"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/red"
+        android:fontFamily="@font/font_app"
+        android:text="LOG OUT"
+        app:cornerRadius="20sp" />
+    </LinearLayout>
+</ScrollView>

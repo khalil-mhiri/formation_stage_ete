@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -35,6 +36,7 @@ public class SignUpActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_sign_up);
         // Affectation des views
         goToSignIn = findViewById(R.id.goToSignIn);
@@ -57,9 +59,9 @@ public class SignUpActivity extends AppCompatActivity {
         });
 
         btnSignUp.setOnClickListener(v -> {
-            progressDialog.setMessage("Please wait ... !");
-            progressDialog.show();
             if (validate()) {
+                progressDialog.setMessage("Please wait ... !");
+                progressDialog.show();
                 firebaseAuth.createUserWithEmailAndPassword(emailInput, passwordInput).addOnCompleteListener(Task -> {
                     if (Task.isSuccessful()) {
                         sendEmailVerification();
