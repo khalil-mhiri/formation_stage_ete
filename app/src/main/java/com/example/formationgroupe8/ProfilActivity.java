@@ -11,9 +11,6 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -79,27 +76,25 @@ public class ProfilActivity extends AppCompatActivity {
             }
         });
 
-        btnEdit.setOnClickListener(v ->{
+        btnEdit.setOnClickListener(v -> {
             String updatedFullName = fullName.getText().toString();
-            String updatedEmail = email.getText().toString();
             String updatedCin = cin.getText().toString();
             String updatedPhone = phone.getText().toString();
 
             databaseReference.child("fullName").setValue(updatedFullName);
-            databaseReference.child("email").setValue(updatedEmail);
             databaseReference.child("cin").setValue(updatedCin);
             databaseReference.child("phone").setValue(updatedPhone);
 
-            loggedUser.updateEmail(updatedEmail).addOnCompleteListener(task -> {
-                if(task.isSuccessful()){
+            loggedUser.updateEmail(email.getText().toString()).addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
                     Toast.makeText(this, "Email updated successfully ", Toast.LENGTH_SHORT).show();
-                }else{
+                } else {
                     Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
                 }
             });
 
             Toast.makeText(this, "Data has been changed successfully", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(ProfilActivity.this,ProfilActivity.class));
+            startActivity(new Intent(ProfilActivity.this, ProfilActivity.class));
         });
 
         btnLogOut.setOnClickListener(v -> {
